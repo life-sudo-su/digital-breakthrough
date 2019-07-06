@@ -14,8 +14,8 @@ import androidx.fragment.app.FragmentActivity;
 
 public class LocationActivity extends FragmentActivity {
 
-    private double LatitudeWorkerPlace = 55.040791;
-    private double LontitudeWorkerPlace = 82.919684;
+    private double LatitudeWorkerPlace = 54.986650;
+    private double LontitudeWorkerPlace = 82.862930;
 
     private static final int REQUEST_LOCATION = 1;
     public LocationManager mLocationManager;
@@ -78,8 +78,8 @@ public class LocationActivity extends FragmentActivity {
         float[] dist = new float[1];
 
         Location.distanceBetween(LatitudeWorkerPlace, LontitudeWorkerPlace, location.getLatitude(), location.getLongitude(), dist);
-
-        if(dist[0]/1000 < 10){
+        float distance = dist[0]/100;
+        if(distance < 10){
             Log.d("test", "checkLocation: user is not far away");
         }
         else
