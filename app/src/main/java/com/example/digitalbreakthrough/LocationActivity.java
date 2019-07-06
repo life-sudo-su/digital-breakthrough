@@ -23,7 +23,7 @@ public class LocationActivity extends FragmentActivity {
 
         @Override
         public void onLocationChanged(Location location) {
-            Log.i("Message: ","Location changed, " + location.getAccuracy() + " , " + location.getLatitude()+ "," + location.getLongitude());
+            //Log.i("Message: ","Location changed, " + location.getAccuracy() + " , " + location.getLatitude()+ "," + location.getLongitude());
         }
 
         @Override
