@@ -1,3 +1,4 @@
 <resources>
-    <string name="app_name">block_param</string>
+    <string name="app_name">Digital Breakthrough</string>
+    <string name="title_activity_maps">Map</string>
 </resources>
