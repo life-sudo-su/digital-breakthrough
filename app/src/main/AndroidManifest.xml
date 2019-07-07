@@ -4,6 +4,8 @@
     android:versionCode="1"
     android:versionName="1.0">
 
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -11,23 +13,27 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+        <service
+            android:name=".ServiceDetectCamera"
+            android:enabled="true"
+            android:exported="true"></service>
 
-        <activity android:name=".MainActivity"
+        <activity
+            android:name=".MainActivity"
             android:label="@string/app_name">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-
-        </activity>
-        <!-- Declaring broadcast receiver for wifi status changing event -->
-        <receiver android:name=".WiFiStatusReceiver" android:enabled="true" android:exported="false">
+        </activity> <!-- Declaring broadcast receiver for wifi status changing event -->
+        <receiver
+            android:name=".WiFiStatusReceiver"
+            android:enabled="true"
+            android:exported="false">
             <intent-filter>
-                <action android:name="android.net.wifi.supplicant.CONNECTION_CHANGE"/>
+                <action android:name="android.net.wifi.supplicant.CONNECTION_CHANGE" />
             </intent-filter>
         </receiver>
     </application>
-
-    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
 
 </manifest>
